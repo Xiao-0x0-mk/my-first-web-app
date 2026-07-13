@@ -1,12 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site!?</title>
+    <title>Dummy Portfolio</title>
+    <style>
+        /* 要件1：昭和レトロの色味（くすんだ温かみのあるカラーパレット） */
+        :root {
+            --bg-cream: #f4ead5;     /* 背景：古い紙のようなクリーム色 */
+            --text-brown: #2c2019;   /* 文字：真っ黒ではない焦げ茶色 */
+            --retro-red: #c94a3a;    /* アクセント：くすんだ朱色 */
+            --retro-blue: #3b7a82;   /* アクセント：ピーコックグリーン */
+            --retro-yellow: #dfa037; /* アクセント：マスタードイエロー */
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-brown);
+            /* レトロ感を出すために明朝体を指定 */
+            font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 要件2：昭和レトロなあしらい（太線、ベタ塗りシャドウ） */
+        header {
+            background-color: var(--retro-red);
+            color: var(--bg-cream);
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 4px solid var(--text-brown);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 0.1em;
+            margin: 0;
+            /* ぼかしのないくっきりとした影でレトロポップ感を演出 */
+            text-shadow: 2px 2px 0px var(--text-brown);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .profile {
+            background-color: #fff;
+            border: 3px solid var(--text-brown);
+            padding: 20px;
+            margin-bottom: 50px;
+            /* ズレたベタ塗り影がモダンレトロの定番デザイン */
+            box-shadow: 8px 8px 0px var(--retro-blue); 
+            position: relative;
+        }
+
+        /* 昔の広告風の星マーク装飾 */
+        .profile::before {
+            content: "★";
+            color: var(--retro-yellow);
+            font-size: 2rem;
+            position: absolute;
+            top: -22px;
+            left: -15px;
+            text-shadow: 1px 1px 0px var(--text-brown);
+        }
+
+        h2 {
+            border-bottom: 2px dashed var(--retro-red);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* 要件3：横にスライドできるギャラリー */
+        .gallery-wrapper {
+            background-color: var(--retro-yellow);
+            border: 3px solid var(--text-brown);
+            padding: 20px;
+            box-shadow: 8px 8px 0px var(--text-brown);
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            /* スクロール時に要素が画面の中央でピタッと止まるようにするCSS */
+            scroll-snap-type: x mandatory; 
+            gap: 20px;
+            padding-bottom: 15px;
+        }
+
+        /* カスタムスクロールバー（レトロな配色） */
+        .gallery::-webkit-scrollbar {
+            height: 12px;
+        }
+        .gallery::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+            border: 2px solid var(--text-brown);
+        }
+        .gallery::-webkit-scrollbar-thumb {
+            background: var(--retro-red);
+            border-right: 2px solid var(--text-brown);
+            border-bottom: 2px solid var(--text-brown);
+        }
+
+        .gallery-item {
+            /* 画面幅に収まらないサイズにして横スクロールを発生させる */
+            flex: 0 0 80%; 
+            scroll-snap-align: center;
+            background-color: #fff;
+            border: 2px solid var(--text-brown);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 1px solid var(--text-brown);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            border-top: 2px solid var(--text-brown);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My GitHub Pages Site!?!?</h1>
-    <p>This is my first GitHub Pages deployment!</p>
+
+    <header>
+        <h1>ダミータイトル</h1>
+        <p>〜 サブタイトルのダミーテキスト 〜</p>
+    </header>
+
+    <div class="container">
+        <!-- プロフィールセクション -->
+        <section class="profile">
+            <h2>ダミー見出し</h2>
+            <p>これはダミーテキストです。ここにはサイトの紹介やプロフィールなどの文章が入ります。<br>
+            デザインやレイアウトを確認するためのダミーテキストです。文字量に合わせて適宜調整してください。</p>
+        </section>
+
+        <!-- ギャラリーセクション -->
+        <section class="gallery-wrapper">
+            <h2>ダミーギャラリー</h2>
+            <p>※補足説明のダミーテキストです</p>
+            <div class="gallery">
+                <!-- ギャラリーアイテム1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544256718-3b6238b75fba?auto=format&fit=crop&w=600&q=80" alt="ダミー画像1">
+                    <h3>ダミー作品 01</h3>
+                    <p>作品の説明文が入るダミーテキストです。</p>
+                </div>
+                <!-- ギャラリーアイテム2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" alt="ダミー画像2">
+                    <h3>ダミー作品 02</h3>
+                    <p>作品の説明文が入るダミーテキストです。</p>
+                </div>
+                <!-- ギャラリーアイテム3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="ダミー画像3">
+                    <h3>ダミー作品 03</h3>
+                    <p>作品の説明文が入るダミーテキストです。</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dummy Portfolio</p>
+    </footer>
+
 </body>
 </html>
